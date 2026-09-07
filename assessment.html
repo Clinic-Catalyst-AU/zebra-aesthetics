@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Zebra Aesthetics - 60 Second Women's Wellness Assessment</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#D8A8A1;--blush-dark:#C4908A;--cream:#F2E5DF;--cream-2:#EFDAD1;--forest:#3E5249;--ink:#1C1E1F;--white:#FFFFFF;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+header{padding:26px 24px;text-align:center;border-bottom:1px solid rgba(62,82,73,.12)}
+header .brand{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest)}
+header .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush-dark);margin-top:6px}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+.card{background:var(--white);width:100%;max-width:640px;padding:44px 40px;border:1px solid rgba(62,82,73,.1);box-shadow:0 20px 60px rgba(62,82,73,.08)}
+.progress{height:4px;background:var(--cream-2);margin-bottom:28px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--blush);transition:width .4s ease}
+.step{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush-dark);margin-bottom:12px}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--forest);line-height:1.15}
+h1{font-size:40px;margin-bottom:14px}
+h2{font-size:32px;margin-bottom:22px}
+p{font-size:15px;line-height:1.7;color:#4A4D4E}
+.lead{margin-bottom:28px}
+.opts{display:grid;gap:10px}
+.opt{display:block;width:100%;text-align:left;background:var(--cream);border:1px solid rgba(62,82,73,.12);padding:16px 18px;font-family:'Montserrat',sans-serif;font-size:15px;color:var(--ink);cursor:pointer;transition:all .15s}
+.opt:hover{border-color:var(--blush);background:var(--cream-2);transform:translateX(3px)}
+.btn{display:inline-block;background:var(--forest);color:#fff;border:none;padding:16px 34px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;margin-top:8px}
+.btn:hover{background:#2F4038}
+.btn.blush{background:var(--blush);color:var(--forest)}
+label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest);margin:14px 0 6px}
+input{width:100%;padding:14px 16px;border:1px solid rgba(62,82,73,.2);background:var(--cream);font-family:'Montserrat',sans-serif;font-size:15px;color:var(--ink)}
+input:focus{outline:none;border-color:var(--blush)}
+.back{background:none;border:none;color:#8A8D8E;font-size:12px;letter-spacing:.1em;cursor:pointer;margin-top:18px;font-family:'Montserrat',sans-serif}
+.result{border-left:3px solid var(--blush);padding:14px 18px;background:var(--cream);margin:18px 0 22px}
+.result p{font-size:15px}
+.note{font-size:13px;color:#6B6E6F;margin-top:18px;line-height:1.6}
+footer{text-align:center;padding:22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8D8E}
+[hidden]{display:none!important}
+@media (max-width:560px){.card{padding:32px 22px}h1{font-size:32px}h2{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="brand">Zebra Aesthetics</div><div class="tag">Where beauty knows no age &middot; Maroochydore</div></header>
+<main>
+<div class="card">
+  <div class="progress"><i id="bar"></i></div>
+
+  <section id="s0">
+    <div class="step">60 seconds &middot; Just between us</div>
+    <h1>What is your body trying to tell you?</h1>
+    <p class="lead">Five quick questions. No judgement, nothing clinical. Agnes reads every one personally and tells you what she would look at first.</p>
+    <button class="btn" onclick="go(1)">Start</button>
+  </section>
+
+  <section id="s1" hidden>
+    <div class="step">1 of 5</div>
+    <h2>Which of these sounds most like you right now?</h2>
+    <div class="opts">
+      <button class="opt" onclick="pick('concern','leak')">I leak a little when I laugh, sneeze, run or jump</button>
+      <button class="opt" onclick="pick('concern','core')">My core and tummy never came back after babies</button>
+      <button class="opt" onclick="pick('concern','meno')">Things have changed through perimenopause or menopause and nobody talks about it</button>
+      <button class="opt" onclick="pick('concern','skin')">My skin looks tired and I have lost the glow</button>
+      <button class="opt" onclick="pick('concern','energy')">I am running on empty and want to feel like me again</button>
+    </div>
+  </section>
+
+  <section id="s2" hidden>
+    <div class="step">2 of 5</div>
+    <h2>How long has it been going on?</h2>
+    <div class="opts">
+      <button class="opt" onclick="pick('length','new')">A few months</button>
+      <button class="opt" onclick="pick('length','year')">About a year</button>
+      <button class="opt" onclick="pick('length','years')">Years. I have just been living with it</button>
+    </div>
+    <button class="back" onclick="go(1)">&larr; Back</button>
+  </section>
+
+  <section id="s3" hidden>
+    <div class="step">3 of 5</div>
+    <h2>What have you tried so far?</h2>
+    <div class="opts">
+      <button class="opt" onclick="pick('tried','nothing')">Nothing yet, I did not know where to start</button>
+      <button class="opt" onclick="pick('tried','exercises')">Exercises or a physio, on and off</button>
+      <button class="opt" onclick="pick('tried','gp')">Talked to my GP and was offered medication</button>
+      <button class="opt" onclick="pick('tried','products')">Products and skincare, without much change</button>
+    </div>
+    <button class="back" onclick="go(2)">&larr; Back</button>
+  </section>
+
+  <section id="s4" hidden>
+    <div class="step">4 of 5</div>
+    <h2>If this were sorted, what would change?</h2>
+    <div class="opts">
+      <button class="opt" onclick="pick('why','confidence')">I would stop thinking about it every day</button>
+      <button class="opt" onclick="pick('why','active')">I would get back to running, the gym, the beach</button>
+      <button class="opt" onclick="pick('why','intimacy')">I would feel like myself with my partner again</button>
+      <button class="opt" onclick="pick('why','mirror')">I would like what I see in the mirror</button>
+    </div>
+    <button class="back" onclick="go(3)">&larr; Back</button>
+  </section>
+
+  <section id="s5" hidden>
+    <div class="step">5 of 5</div>
+    <h2>When would you like to do something about it?</h2>
+    <div class="opts">
+      <button class="opt" onclick="pick('when','now')">As soon as possible</button>
+      <button class="opt" onclick="pick('when','month')">In the next month or so</button>
+      <button class="opt" onclick="pick('when','looking')">Just finding out what is possible for now</button>
+    </div>
+    <button class="back" onclick="go(4)">&larr; Back</button>
+  </section>
+
+  <section id="s6" hidden>
+    <div class="step">Your result</div>
+    <h2 id="rTitle">Here is what Agnes would look at first.</h2>
+    <div class="result"><p id="rBody"></p></div>
+    <p>Pop your details below and Agnes will send you a short personal note, plus the next step. Nothing salesy, nothing you cannot opt out of.</p>
+    <label for="fn">First name</label><input id="fn" type="text" placeholder="Your first name">
+    <label for="mob">Mobile</label><input id="mob" type="tel" placeholder="04..">
+    <label for="em">Email</label><input id="em" type="email" placeholder="you@email.com">
+    <button class="btn blush" onclick="submitLead()">Send me Agnes's note</button>
+    <p class="note">By sending, you agree to hear from Zebra Aesthetics by text and email. Unsubscribe any time.</p>
+  </section>
+
+  <section id="s7" hidden>
+    <div class="step">Thank you</div>
+    <h2>Agnes has it. Here is the next step.</h2>
+    <p class="lead">Most people start with a consultation at the Ocean Street clinic. There is a $50 booking fee, which comes straight off your first treatment and is refundable with 48 hours notice, so you can book with no pressure.</p>
+    <a class="btn" href="https://bookings.gettimely.com/zebraaesthetics/book" target="_blank">Book my consultation</a>
+    <p class="note">8 / 2-4 Ocean Street, Maroochydore &middot; also visiting Maryborough monthly</p>
+  </section>
+</div>
+</main>
+<footer>Demo built by Clinic Catalyst for Zebra Aesthetics</footer>
+<script>
+const a={};
+function go(n){for(let i=0;i<=7;i++){const s=document.getElementById('s'+i);if(s)s.hidden=(i!==n)}document.getElementById('bar').style.width=Math.min(100,Math.round((n/6)*100))+'%';window.scrollTo({top:0,behavior:'smooth'})}
+function pick(k,v){a[k]=v;const order={concern:2,length:3,tried:4,why:5,when:6};if(k==='when')render();go(order[k])}
+function render(){
+  const c=a.concern;
+  const map={
+    leak:"Leaking when you laugh or run is the pelvic floor asking for strength, and it is one of the most common things Agnes sees. It is hormone-free to treat, you stay fully clothed, and most women start noticing the difference within the first few sessions. First step: a consultation to check what is going on and map a plan.",
+    core:"After babies the deep core and pelvic floor often switch off together, which is why crunches never fixed it. Agnes looks at both as one system. First step: a consultation to assess your core and pelvic floor and build a plan around your life, not the other way round.",
+    meno:"The changes through perimenopause and menopause are real, they are physical, and they are not something you have to put up with. Agnes has a special interest in women's health through this stage and starts with a proper conversation about what has changed for you.",
+    skin:"Tired, dull skin at this stage of life usually comes down to collagen and hydration, and there are gentle, natural ways to bring it back. Agnes starts with a skin consultation, looks at what your skin is actually doing, and builds a plan from there.",
+    energy:"Running on empty deserves more than a pep talk. Agnes looks at the whole picture, from nutrition and hydration to how your body is recovering, and works out where to start. First step is a consultation, and a plan you can actually keep."
+  };
+  document.getElementById('rBody').textContent=map[c]||map.leak;
+  if(a.tried==='gp')document.getElementById('rBody').textContent+=" You mentioned medication was offered. There are options that do not involve it, and Agnes will walk you through them.";
+}
+function submitLead(){const fn=document.getElementById('fn').value.trim(),mob=document.getElementById('mob').value.trim();if(!fn||!mob){alert('Just your first name and mobile so Agnes can reach you.');return}console.log('lead',{...a,fn,mob,em:document.getElementById('em').value});go(7)}
+</script>
+</body>
+</html>

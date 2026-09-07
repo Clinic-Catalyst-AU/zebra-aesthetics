@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Zebra Aesthetics - Private Results Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#D8A8A1;--blush-dark:#C4908A;--cream:#F2E5DF;--cream-2:#EFDAD1;--forest:#3E5249;--ink:#1C1E1F;--white:#FFFFFF;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+header{padding:26px 24px;text-align:center;border-bottom:1px solid rgba(62,82,73,.12)}
+header .brand{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest)}
+header .tag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush-dark);margin-top:6px}
+.wrap{max-width:900px;margin:0 auto;padding:40px 20px 60px}
+.gate{background:var(--white);max-width:520px;margin:40px auto;padding:44px 40px;border:1px solid rgba(62,82,73,.1);box-shadow:0 20px 60px rgba(62,82,73,.08);text-align:center}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--forest);line-height:1.15}
+h1{font-size:38px;margin-bottom:12px}
+h2{font-size:30px;margin-bottom:10px}
+h3{font-size:22px;margin-bottom:6px}
+p{font-size:15px;line-height:1.7;color:#4A4D4E}
+input{width:100%;padding:14px 16px;border:1px solid rgba(62,82,73,.2);background:var(--cream);font-family:'Montserrat',sans-serif;font-size:15px;margin:18px 0 12px;text-align:center;letter-spacing:.1em}
+input:focus{outline:none;border-color:var(--blush)}
+.btn{display:inline-block;background:var(--forest);color:#fff;border:none;padding:15px 32px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.err{color:#B4534A;font-size:13px;margin-top:10px;display:none}
+.warn{border:1px solid var(--blush);background:var(--cream-2);padding:16px 20px;margin:24px 0 32px;font-size:13px;line-height:1.6}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.case{background:var(--white);border:1px solid rgba(62,82,73,.1);padding:26px}
+.case .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blush-dark);margin-bottom:8px}
+.case .ba{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.case .ba div{aspect-ratio:4/5;background:linear-gradient(160deg,var(--cream),var(--cream-2));display:flex;align-items:flex-end;padding:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest)}
+footer{text-align:center;padding:22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8D8E}
+[hidden]{display:none!important}
+@media (max-width:640px){.grid{grid-template-columns:1fr}.gate{padding:32px 22px}}
+</style>
+</head>
+<body>
+<header><div class="brand">Zebra Aesthetics</div><div class="tag">Private results gallery &middot; shared after consultation</div></header>
+
+<div class="gate" id="gate">
+  <h1>Just for you.</h1>
+  <p>This gallery is shared with clients after a consultation with Agnes, in line with Australian advertising rules for cosmetic injectables. Enter the code from your consultation to view.</p>
+  <input id="code" type="password" placeholder="Access code" onkeydown="if(event.key==='Enter')unlock()">
+  <button class="btn" onclick="unlock()">View gallery</button>
+  <p class="err" id="err">That code does not match. Check the note from your consultation.</p>
+</div>
+
+<div class="wrap" id="gallery" hidden>
+  <h2>Results from the Ocean Street clinic</h2>
+  <p>Every result here is one of Agnes's own clients, shared with their consent. Results vary from person to person, and what is right for you is decided together in your consultation.</p>
+  <div class="warn">These images show cosmetic injectable treatments performed by a Registered Nurse under the supervision of a prescribing practitioner. They are provided for information after consultation only and are not an offer or inducement.</div>
+  <div class="grid">
+    <div class="case"><div class="k">Case 01 &middot; Facial balancing</div><h3>Softening the lines that arrived early</h3><div class="ba"><div>Before</div><div>After</div></div><p>Agnes's own client photos drop in here once consent is confirmed. Concern-led caption, treatment named only after the consult.</p></div>
+    <div class="case"><div class="k">Case 02 &middot; Bioremodelling</div><h3>Firmer, more hydrated skin through the change</h3><div class="ba"><div>Before</div><div>After</div></div><p>Placeholder for a consented before and after. The gallery grows as Agnes adds cases from the clinic.</p></div>
+    <div class="case"><div class="k">Case 03 &middot; PRP</div><h3>Bringing the glow back naturally</h3><div class="ba"><div>Before</div><div>After</div></div><p>Placeholder for a consented before and after.</p></div>
+    <div class="case"><div class="k">Case 04 &middot; Biofiller</div><h3>Volume, without the filler conversation</h3><div class="ba"><div>Before</div><div>After</div></div><p>Placeholder for a consented before and after.</p></div>
+  </div>
+</div>
+<footer>Demo built by Clinic Catalyst for Zebra Aesthetics &middot; not indexed</footer>
+<script>
+function unlock(){const v=document.getElementById('code').value.trim().toLowerCase();if(v==='zebra-aesthetics2026'||v==='zebraaesthetics2026'){document.getElementById('gate').hidden=true;document.getElementById('gallery').hidden=false}else{document.getElementById('err').style.display='block'}}
+</script>
+</body>
+</html>
