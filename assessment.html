@@ -113,9 +113,8 @@ footer{text-align:center;padding:22px;font-size:11px;letter-spacing:.12em;text-t
   </section>
 
   <section id="s6" hidden>
-    <div class="step">Your result</div>
-    <h2 id="rTitle">Here is what Agnes would look at first.</h2>
-    <div class="result"><p id="rBody"></p></div>
+    <div class="step">Last step</div>
+    <h2 id="rTitle">Submit your details for Agnes' best hacks to support your concern.</h2>
     <p>Pop your details in. You will get an email and a text straight away with a link to exactly what you can do at home, right now, for what you have told me.</p>
     <label for="fn">First name</label><input id="fn" type="text" placeholder="Your first name">
     <label for="mob">Mobile</label><input id="mob" type="tel" placeholder="04..">
@@ -127,6 +126,7 @@ footer{text-align:center;padding:22px;font-size:11px;letter-spacing:.12em;text-t
   <section id="s7" hidden>
     <div class="step">Thank you</div>
     <h2>Check your texts and your inbox.</h2>
+    <div class="result"><p id="rBody"></p></div>
     <p class="lead">Your link is on its way by text and email: exactly what you can do at home right now for what you have told me. When you are ready, most people book a consultation at the Ocean Street clinic. The $50 booking fee comes straight off your first treatment and is refundable with 48 hours notice.</p>
     <a class="btn" href="https://bookings.gettimely.com/zebraaesthetics/book" target="_blank">Book my consultation</a>
     <p class="note">8 / 2-4 Ocean Street, Maroochydore &middot; also visiting Maryborough monthly</p>
@@ -147,6 +147,8 @@ function render(){
     skin:"Tired, dull skin at this stage of life usually comes down to collagen and hydration, and there are gentle, natural ways to bring it back. Agnes starts with a skin consultation, looks at what your skin is actually doing, and builds a plan from there.",
     energy:"Running on empty deserves more than a pep talk. Agnes looks at the whole picture, from nutrition and hydration to how your body is recovering, and works out where to start. First step is a consultation, and a plan you can actually keep."
   };
+  const t={leak:"best at-home hacks to support your pelvic floor",core:"best at-home hacks to support your core after babies",meno:"best at-home hacks to support your body through menopause",skin:"best skin hacks to support your skin",energy:"best at-home hacks to support your energy"};
+  document.getElementById('rTitle').textContent="Submit your details for Agnes' "+(t[c]||t.leak)+".";
   document.getElementById('rBody').textContent=map[c]||map.leak;
   if(a.tried==='gp')document.getElementById('rBody').textContent+=" You mentioned medication was offered. There are options that do not involve it, and Agnes will walk you through them.";
 }
